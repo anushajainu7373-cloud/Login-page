@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <title>Login Page</title>
+
+    <style>
+
+        body {
+            font-family: Arial;
+            background-color: pink;
+        }
+
+        .login {
+            width: 350px;
+            margin: 100px auto;
+            padding: 30px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 10px gray;
+        }
+
+        h1 {
+            text-align: center;
+            color: darkblue;
+        }
+
+        label {
+            display: block;
+            margin-top: 15px;
+            font-weight: bold;
+        }
+
+        input {
+            width: 100%;
+            padding: 10px;
+            margin-top: 5px;
+            box-sizing: border-box;
+        }
+
+        button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 20px;
+            background-color: darkblue;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: blue;
+        }
+
+        #message {
+            text-align: center;
+            font-weight: bold;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <div class="login">
+
+        <h1>Login</h1>
+
+        <label>Username</label>
+        <input type="text" id="Username">
+
+        <label>Password</label>
+        <input type="password" id="Password">
+
+        <button id="Loginbtn">Login</button>
+
+        <p id="message"></p>
+
+    </div>
+
+    <script>
+
+        let Username = document.getElementById("Username");
+        let Password = document.getElementById("Password");
+        let Loginbtn = document.getElementById("Loginbtn");
+        let message = document.getElementById("message");
+
+        Loginbtn.addEventListener("click", function()
+        {
+            let User = Username.value;
+            let Pass = Password.value;
+
+            if(User == "bhavani" && Pass == "1234")
+            {
+                localStorage.setItem("Username", User);
+                localStorage.setItem("Password", Pass);
+
+                message.innerHTML = "Login successful";
+                message.style.color = "green";
+            }
+            else
+            {
+                message.innerHTML = "Login unsuccessful";
+                message.style.color = "red";
+            }
+
+        });
+
+    </script>
+
+</body>
+</html>
